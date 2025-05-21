@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
-import { quizzes } from './mock-data-sample';
+import { quizzes } from "../data/mock-data-sample";
+
 
 const router = Router();
 

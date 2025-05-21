@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Quiz API
+  description: API for serving quiz data
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: Development server
+
+paths:
+  /api/quizzes:
+    get:
+      summary: Get all quizzes
+      tags:
+        - Quizzes
+      responses:
+        '200':
+          description: A list of quizzes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Quiz'
+
+components:
+  schemas:
+    Quiz:
+      type: object
+      properties:
+        id:
+          type: string
+        question:
+          type: string
+        choices:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              correct:
+                type: boolean

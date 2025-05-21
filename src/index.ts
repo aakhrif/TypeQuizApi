@@ -2,7 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { corsOptions } from "./corsOptions";
-import quizRoutes from './quiz.routes';
+import quizRoutes from './routes/quiz.routes';
+import { swaggerUiServe, swaggerUiSetup } from './docs/swagger';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/api', quizRoutes);
+app.use('/api-docs', swaggerUiServe, swaggerUiSetup);
 
 app.listen(PORT, () => {
     console.log(`Server started and listening on port ${PORT}`);
