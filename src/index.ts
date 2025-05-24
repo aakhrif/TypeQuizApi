@@ -1,7 +1,7 @@
 import express from 'express'; 
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { corsOptions } from "./corsOptions";
+import { corsOptions } from "./libs/corsOptions";
 import quizRoutes from './routes/quiz.routes';
 import { swaggerUiServe, swaggerUiSetup } from './docs/swagger';
 
