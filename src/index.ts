@@ -8,7 +8,7 @@ import { swaggerUiServe, swaggerUiSetup } from './docs/swagger';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6000;
 
 app.use(cors(corsOptions));
 app.use(express.json());
